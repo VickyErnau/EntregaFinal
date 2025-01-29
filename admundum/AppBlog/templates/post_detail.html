@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<table class="table">
+    <tr><th>{{ post.titulo }}</th></tr>
+    <tr><td>{{ post.texto | safe }}</td></tr>
+
+    {% if post.imagen %}
+        <tr><th><img src="{{ post.imagen.url }}" class="img-fluid"></th></tr>
+    {% endif %}
+
+    <tr><td><b>Fecha de Creación:</b> {{ post.create_date }}</td></tr>
+    <tr><td><b>Fecha de Modificación:</b> {{ post.update_date }}</td></tr>
+    </table>
+{% endblock content %}

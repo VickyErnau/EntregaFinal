@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card">
+    <div class="card-body">
+        <div class="col-12 col-md-6 offset-md-3">
+            <form action="" method="POST"> {% csrf_token %}
+                {{ post.media }}
+            <table class="table">
+                <tr>
+                    <th>Titulo</th><td>{{ post.titulo }} </td>
+                </tr>
+                <tr>
+                    <th>Resúmen</th><td> {{ post.resumen }} </td>
+                </tr>
+                <tr>
+                    <th>Texto</th><td> {{ post.texto }} </td>
+                </tr>
+                </table>
+                <button type=""><a href="{% url 'posts' %}" class="link-dark link-underline-light">Cancelar</a></button>
+                <button type="submit">Modificar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

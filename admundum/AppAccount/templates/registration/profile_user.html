@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table">
+        <tr>
+            <th>User: </th><td> {{ user.username }}  </td>
+        </tr>
+        <tr>
+            <th>Email: </th><td> {{ user.email }} </td>
+        </tr>
+        <tr>
+            <th>Nombre: </th><td> {{ user.first_name }} </td>
+        </tr>
+        <tr>
+            <th>Apellido: </th><td> {{ user.last_name }} </td>
+        </tr>
+        </table>
+        <a class="btn btn-info" href={% url 'update_user' %}>Actualizar Usuario</a>
+        <a class="btn btn-secondary" href={% url 'update_password' %}>Actualizar Password</a>
+{% endblock %}

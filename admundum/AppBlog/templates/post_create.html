@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <form action="{% url 'post_create' %}" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+        {{ form.media }}
+    <table class="table">
+        <tr>
+            <th>Titulo</th><td> {{ form.titulo }} </td>
+        </tr>
+        <tr>
+            <th>Resúmen</th><td> {{ form.resumen }} </td>
+        </tr>
+        <tr>
+            <th>Texto</th><td> {{ form.texto }} </td>
+        </tr>
+        <tr>
+            <th>Imagen</th><td> {{ form.imagen }} </td>
+        </tr>
+        </table>
+        <button type="submit">Guardar</button>
+    </form>
+
+
+
+{% endblock %}
